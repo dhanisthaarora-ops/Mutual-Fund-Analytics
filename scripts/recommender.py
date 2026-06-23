@@ -1,3 +1,10 @@
+"""
+Simple mutual fund recommender based on risk appetite and Sharpe ratio.
+
+Usage:
+    python scripts/recommender.py
+"""
+
 import pandas as pd
 from pathlib import Path
 
@@ -6,6 +13,7 @@ PROCESSED_DIR = BASE_DIR / "data" / "processed"
 
 
 def recommend_funds(risk_appetite):
+    """Return top 3 funds by Sharpe ratio for the selected risk appetite."""
     risk_appetite = risk_appetite.strip().lower()
 
     risk_map = {
